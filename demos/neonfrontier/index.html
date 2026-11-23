@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEON FRONTIER / METAVERSE (concept design)</title>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Share+Tech+Mono&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--p:#b455ff;--k:#ff3fd0;--t:#f2e8ff;--bg:#06020d;--ln:rgba(180,85,255,.38);--panel:rgba(22,8,40,.72)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#030108;color:var(--t);font-family:Rajdhani,system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.mono{font-family:'Share Tech Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+.scr{container-type:inline-size;position:relative;width:100%;max-width:1500px;margin:0 auto;aspect-ratio:16/9;overflow:hidden;background:radial-gradient(60cqw 40cqw at 70% 30%,rgba(120,30,200,.35),transparent 70%),radial-gradient(40cqw 30cqw at 10% 90%,rgba(255,40,200,.16),transparent 70%),var(--bg);border-bottom:1px solid var(--ln)}
+.scr::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(180,85,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(180,85,255,.07) 1px,transparent 1px);background-size:3cqw 3cqw;mask-image:radial-gradient(80% 80% at 50% 45%,#000,transparent);-webkit-mask-image:radial-gradient(80% 80% at 50% 45%,#000,transparent);animation:gridmove 14s linear infinite}
+@keyframes gridmove{to{background-position:0 3cqw}}
+.scr::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:20;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px);mix-blend-mode:multiply}
+.abs{position:absolute}
+/* nav */
+.nav{position:absolute;z-index:10;left:3cqw;right:2cqw;top:1.4cqw;display:flex;align-items:center;gap:2.4cqw;font-size:max(9px,.72cqw)}
+.logo{display:flex;align-items:center;gap:.7cqw;font-family:'Share Tech Mono';font-size:max(10px,.95cqw);letter-spacing:.14em}
+.logo svg{width:2.2cqw;height:2.2cqw}
+.tabs{display:flex;gap:2.6cqw;margin:0 auto;font-family:'Share Tech Mono';letter-spacing:.14em;text-transform:uppercase;color:#d7c3f3}
+.tabs a{padding:.5cqw 0;position:relative}.tabs a.on{color:var(--k)}.tabs a.on::after{content:'';position:absolute;left:0;right:0;bottom:-.1cqw;height:.18cqw;background:var(--k);box-shadow:0 0 .8cqw var(--k)}
+.tabs a:hover{color:#fff}
+.ico{width:2.1cqw;height:2.1cqw;border:1px solid var(--ln);border-radius:50%;display:grid;place-items:center}
+.tag{font-family:'Share Tech Mono';letter-spacing:.12em;border:1px solid var(--ln);padding:.7cqw 1.3cqw;text-transform:uppercase;color:#d7c3f3}
+.cta{font-family:'Share Tech Mono';letter-spacing:.12em;text-transform:uppercase;background:linear-gradient(90deg,var(--p),var(--k));color:#12041f;font-weight:700;padding:.8cqw 1.6cqw;clip-path:polygon(0 0,calc(100% - .9cqw) 0,100% .9cqw,100% 100%,.9cqw 100%,0 calc(100% - .9cqw));box-shadow:0 0 2cqw rgba(255,63,208,.5);transition:filter .3s,transform .3s}
+.cta:hover{filter:brightness(1.2);transform:translateY(-2px)}
+/* headline: distressed */
+.grunge{filter:url(#grunge);font-family:'Big Shoulders Display',sans-serif;font-weight:900;color:var(--t);text-transform:uppercase;line-height:.84;letter-spacing:.01em;text-shadow:0 0 1.4cqw rgba(190,90,255,.65)}
+.glitch{animation:glitch 7s infinite steps(1)}
+@keyframes glitch{0%,93%,100%{transform:none;text-shadow:0 0 1.4cqw rgba(190,90,255,.65)}94%{transform:translate(-.3cqw,0) skewX(-4deg);text-shadow:.5cqw 0 0 rgba(255,63,208,.9),-.5cqw 0 0 rgba(120,200,255,.8)}96%{transform:translate(.3cqw,.1cqw);text-shadow:-.4cqw 0 0 rgba(255,63,208,.9),.4cqw 0 0 rgba(120,200,255,.8)}98%{transform:none}}
+.eyebrow{font-family:'Share Tech Mono';font-size:max(8px,.62cqw);letter-spacing:.2em;text-transform:uppercase;color:var(--k)}
+/* side rail */
+.side{position:absolute;z-index:9;left:.9cqw;top:8cqw;bottom:2cqw;width:2cqw;display:flex;flex-direction:column;align-items:center;gap:1.4cqw;font-size:max(7px,.55cqw);color:#cfb6ee}
+.side .v{writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:.2em}
+.side i{width:1.2cqw;height:1.2cqw;border:1px solid #cfb6ee;border-radius:30%;display:block}
+.side .line{flex:1;width:1px;background:linear-gradient(var(--ln),var(--k),var(--ln))}
+/* girls */
+.girl{-webkit-mask-image:linear-gradient(0deg,transparent 0,#000 7%);mask-image:linear-gradient(0deg,transparent 0,#000 7%);position:absolute;z-index:5;filter:drop-shadow(0 0 2.4cqw rgba(190,70,255,.55));will-change:transform;transition:transform .3s}
+/* frontier */
+#frontier .hl{position:absolute;z-index:3;left:5.4cqw;top:9.5cqw}
+#frontier .hl h1{font-size:11.8cqw}
+#frontier .girl{left:32cqw;bottom:9.4cqw;height:45cqw}
+.card1{position:absolute;z-index:8;right:2cqw;top:9cqw;width:20cqw;border:1px solid var(--ln);background:var(--panel);backdrop-filter:blur(6px);padding:1.1cqw;font-size:max(8px,.62cqw);line-height:1.5}
+.card1 .lab{font-family:'Share Tech Mono';font-size:max(7px,.5cqw);letter-spacing:.14em;color:#cfb6ee;text-transform:uppercase}
+.card1 h4{font-family:'Share Tech Mono';font-weight:400;font-size:max(9px,.8cqw);letter-spacing:.1em;margin:.8cqw 0 .4cqw}
+.card1 p{font-family:'Share Tech Mono';font-size:max(7px,.55cqw);line-height:1.6;color:#d7c3f3;text-transform:uppercase}
+.idbtn{margin:.9cqw 0;display:flex;align-items:center;gap:.8cqw;border:1px solid var(--k);background:rgba(255,63,208,.12);padding:.6cqw .8cqw;font-family:'Share Tech Mono';font-size:max(7px,.55cqw);letter-spacing:.1em;text-transform:uppercase;box-shadow:0 0 1.2cqw rgba(255,63,208,.35)}
+.idbtn b{margin-left:auto;border:1px solid var(--k);padding:.2cqw .5cqw;color:var(--k)}
+.net{display:flex;align-items:center;justify-content:space-between;margin-top:.5cqw}
+.net .pct{font-family:'Big Shoulders Display';font-weight:800;font-size:2.2cqw;line-height:1}
+/* hud */
+.hud{position:absolute;z-index:8;left:3cqw;right:2cqw;bottom:1.6cqw;height:8.4cqw;display:grid;grid-template-columns:1.35fr 1fr 1fr 1fr 1.05fr;border:1px solid var(--ln);background:var(--panel);backdrop-filter:blur(6px)}
+.hud>div{padding:.8cqw 1cqw;border-right:1px solid var(--ln);position:relative;font-size:max(7px,.55cqw)}
+.hud>div:last-child{border:0}
+.hud .lab{font-family:'Share Tech Mono';letter-spacing:.14em;color:#cfb6ee;text-transform:uppercase}
+.hud .big{font-family:'Big Shoulders Display';font-weight:800;font-size:2.1cqw;line-height:1}
+.hud .live{font-family:'Big Shoulders Display';font-weight:800;font-size:1.7cqw;color:var(--k);text-shadow:0 0 1cqw var(--k)}
+.hud svg{display:block}
+/* metaverse */
+#metaverse .nav{gap:2.2cqw}
+#metaverse .hl2{position:absolute;z-index:3;left:5cqw;right:5cqw;top:9.5cqw;text-align:center}
+#metaverse .hl2 h1{font-size:20.5cqw;letter-spacing:.005em;white-space:nowrap}
+#metaverse .girl{left:50%;bottom:10.2cqw;height:44cqw;margin-left:-14cqw}
+.ears{position:absolute;z-index:6;left:50%;bottom:10.4cqw;height:41cqw;aspect-ratio:350/500;transform:translateX(-50%);pointer-events:none}
+.ears path{fill:none;stroke:var(--k);stroke-width:5;stroke-linecap:round;filter:drop-shadow(0 0 6px var(--k)) drop-shadow(0 0 14px var(--k))}
+.lft{position:absolute;z-index:8;left:5cqw;top:34cqw;width:22cqw}
+.lft h3{font-family:'Share Tech Mono';font-weight:400;font-size:max(10px,1cqw);letter-spacing:.14em;line-height:1.7;text-transform:uppercase}.lft h3 em{font-style:normal;color:var(--k)}
+.lft p{font-size:max(8px,.7cqw);color:#cfb6ee;margin:.8cqw 0 1.4cqw;max-width:17cqw}
+.ghost{display:inline-block;border:1px solid #d7c3f3;padding:.8cqw 2.6cqw;font-family:'Share Tech Mono';font-size:max(8px,.68cqw);letter-spacing:.14em;text-transform:uppercase;transition:background .3s,color .3s}.ghost:hover{background:var(--t);color:#14061f}
+.rgt{position:absolute;z-index:8;right:5cqw;top:32cqw;width:18cqw}
+.rgt h3{font-family:'Share Tech Mono';font-weight:400;font-size:max(9px,.8cqw);letter-spacing:.14em;line-height:1.8;text-transform:uppercase}.rgt h3 em{font-style:normal;color:var(--k)}
+.trailer{display:flex;align-items:center;gap:1cqw;margin-top:1.6cqw;font-family:'Share Tech Mono';font-size:max(8px,.65cqw);letter-spacing:.16em;cursor:pointer}
+.trailer span{width:3cqw;height:3cqw;border-radius:50%;border:1px solid var(--k);display:grid;place-items:center;color:var(--k);box-shadow:0 0 1.4cqw rgba(255,63,208,.5);transition:transform .3s}.trailer:hover span{transform:scale(1.12)}
+.bar2{position:absolute;z-index:8;left:3.5cqw;right:3.5cqw;bottom:1.6cqw;height:8.6cqw;border:1px solid rgba(255,63,208,.55);background:linear-gradient(90deg,rgba(60,10,90,.8),rgba(30,6,56,.75));backdrop-filter:blur(6px);display:grid;grid-template-columns:1fr 1fr 1.25fr .28fr;align-items:center;clip-path:polygon(0 0,calc(100% - 1.4cqw) 0,100% 1.4cqw,100% 100%,1.4cqw 100%,0 calc(100% - 1.4cqw));box-shadow:0 0 3cqw rgba(255,63,208,.25)}
+.bar2>div{display:flex;align-items:center;gap:1.4cqw;padding:0 2cqw;border-right:1px solid var(--ln);height:70%}
+.bar2>div:last-child{border:0;justify-content:center;padding:0}
+.bar2 .num{font-family:'Big Shoulders Display';font-weight:800;font-size:1.9cqw;color:var(--k);text-shadow:0 0 1cqw var(--k);line-height:1}
+.bar2 small{display:block;font-family:'Share Tech Mono';font-size:max(7px,.55cqw);letter-spacing:.14em;color:#d7c3f3;text-transform:uppercase}
+.bar2 .go{width:4.2cqw;height:4.2cqw;border-radius:50%;border:1px solid var(--k);display:grid;place-items:center;color:var(--k);font-size:1.6cqw;box-shadow:0 0 1.4cqw rgba(255,63,208,.5);transition:transform .3s}.bar2 .go:hover{transform:scale(1.1)}
+.avs{display:flex}.avs i{width:2.8cqw;height:2.8cqw;border-radius:50%;border:2px solid var(--k);margin-left:-.5cqw;background:radial-gradient(circle at 40% 35%,#f4d6ff,#7a2fc0 70%)}.avs i:nth-child(2){background:radial-gradient(circle at 40% 35%,#ffd0ef,#c02fa0 70%)}.avs i:nth-child(3){background:radial-gradient(circle at 40% 35%,#d6c4ff,#4a2fc0 70%)}
+.counter{position:absolute;z-index:9;right:5cqw;top:6.4cqw;font-family:'Share Tech Mono';letter-spacing:.2em;font-size:max(9px,.9cqw);color:var(--k)}.counter span{color:#cfb6ee}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s,transform 1s}.rv.in{opacity:1;transform:none}
+.note{max-width:1500px;margin:0 auto;padding:18px 20px 40px;color:#8c76ad;font-family:'Share Tech Mono';font-size:.7rem;letter-spacing:.1em;text-align:center}
+
+@media(prefers-reduced-motion:reduce){.scr::before,.glitch{animation:none}}
+
+/* ===== GLITCH++ : frequent, everywhere ===== */
+.glitch{animation:glitch 2.4s infinite steps(1);position:relative}
+.glitch::before,.glitch::after{content:attr(data-t);position:absolute;left:0;top:0;white-space:pre;pointer-events:none;opacity:0;font:inherit;line-height:inherit;letter-spacing:inherit;text-transform:inherit}
+.glitch::before{color:#ff3fd0;animation:sliceA 1.9s infinite steps(1)}
+.glitch::after{color:#5ad2ff;animation:sliceB 2.3s infinite steps(1);animation-delay:.6s}
+@keyframes glitch{0%,70%,100%{transform:none;text-shadow:0 0 1.4cqw rgba(190,90,255,.65)}72%{transform:translate(-.4cqw,0) skewX(-5deg);text-shadow:.6cqw 0 0 rgba(255,63,208,.95),-.6cqw 0 0 rgba(90,200,255,.85)}75%{transform:translate(.4cqw,.1cqw) skewX(3deg);text-shadow:-.5cqw 0 0 rgba(255,63,208,.95),.5cqw 0 0 rgba(90,200,255,.85)}78%{transform:none}90%{transform:translate(.2cqw,0)}92%{transform:none}}
+@keyframes sliceA{0%,80%,100%{opacity:0}81%{opacity:.95;clip-path:inset(8% 0 72% 0);transform:translate(-.9cqw,0)}84%{opacity:.95;clip-path:inset(52% 0 22% 0);transform:translate(.8cqw,0)}88%{opacity:.95;clip-path:inset(30% 0 48% 0);transform:translate(-.5cqw,0)}92%{opacity:0}}
+@keyframes sliceB{0%,76%,100%{opacity:0}77%{opacity:.9;clip-path:inset(62% 0 10% 0);transform:translate(.9cqw,0)}81%{opacity:.9;clip-path:inset(15% 0 60% 0);transform:translate(-.8cqw,.1cqw)}85%{opacity:.9;clip-path:inset(40% 0 38% 0);transform:translate(.5cqw,0)}90%{opacity:0}}
+.gl{animation:glsm var(--gd,4s) infinite steps(1);animation-delay:var(--gdl,0s)}
+@keyframes glsm{0%,88%,100%{translate:0 0;text-shadow:none}90%{translate:-.25cqw 0;text-shadow:.18cqw 0 0 rgba(255,63,208,.95),-.18cqw 0 0 rgba(90,200,255,.85)}93%{translate:.25cqw .05cqw;text-shadow:-.18cqw 0 0 rgba(255,63,208,.95),.18cqw 0 0 rgba(90,200,255,.85)}96%{translate:0 0;text-shadow:.1cqw 0 0 rgba(255,63,208,.7)}}
+.scr.hit{animation:screenhit .22s steps(2)}
+@keyframes screenhit{0%{filter:none}50%{filter:hue-rotate(40deg) saturate(1.6) brightness(1.15);transform:translateX(.3cqw)}100%{filter:none}}
+@media(prefers-reduced-motion:reduce){.glitch,.glitch::before,.glitch::after,.gl{animation:none}}
+
+/* STACKED layout for phones and tablets */
+@media(max-width:1000px){
+  html,body{overflow-x:hidden}
+  .scr{aspect-ratio:auto;height:auto;container-type:normal;padding:74px 16px 22px;display:flex;flex-direction:column;gap:18px}
+  .scr::before{background-size:32px 32px}
+  .nav{left:14px;right:14px;top:14px;gap:10px;font-size:11px}
+  .tabs,.ico,.tag,.side{display:none}
+  .logo{font-size:12px}.logo svg,#metaverse .nav>svg{width:28px!important;height:28px!important}
+  .cta{padding:9px 14px;font-size:11px;clip-path:none;margin-left:auto}
+  .eyebrow{font-size:10px}
+  #frontier .hl,#metaverse .hl2,.card1,.hud,.lft,.rgt,.bar2,.counter,.eyebrow.abs{position:static!important;width:auto!important}
+  #frontier .hl h1{font-size:min(22vw,150px)}
+  #metaverse .hl2 h1{font-size:min(19vw,170px);white-space:normal}
+  #metaverse .hl2{text-align:left}
+  .girl{position:relative!important;left:auto!important;bottom:auto!important;height:auto!important;margin:-6px auto 0!important;width:min(86%,400px)}
+  #metaverse .girl{width:min(70%,320px)}
+  .card1{font-size:11px;padding:14px}.card1 p,.card1 .lab,.idbtn{font-size:10.5px}.card1 h4{font-size:12px}
+  .card1 #feed{height:46px!important}.net svg{width:42%!important}.net .pct{font-size:30px}
+  .hud{grid-template-columns:1fr 1fr;height:auto}
+  .hud>div{padding:12px;font-size:10px;border-bottom:1px solid var(--ln)}
+  .hud>div:first-child,.hud>div:nth-child(4),.hud>div:last-child{grid-column:1/-1}
+  .hud svg{width:42px!important;height:auto}.hud #act{width:100%!important;height:44px!important}
+  .hud .big{font-size:26px}.hud .live{font-size:22px}.hud .lab{font-size:9px}
+  .counter{text-align:right;font-size:12px;order:-1}
+  .lft h3{font-size:15px}.lft p{font-size:13px;max-width:none}.ghost{padding:12px 28px;font-size:12px}
+  .rgt h3{font-size:14px}.trailer{font-size:12px}.trailer span{width:42px;height:42px}
+  .bar2{grid-template-columns:1fr 1fr;height:auto;clip-path:none;border-radius:6px}
+  .bar2>div{height:auto;padding:14px;border-bottom:1px solid var(--ln);gap:12px}
+  .bar2 svg{width:52px!important;height:auto!important}
+  .bar2 .num{font-size:22px!important}.bar2 small{font-size:10px}
+  .avs i{width:32px;height:32px}.bar2 .go{width:52px;height:52px;font-size:22px}
+  .bar2>div:nth-child(3){grid-column:1/-1}.bar2>div:last-child{grid-column:1/-1;border:0}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="grunge" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".42" numOctaves="3" seed="4" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -10 7.7" result="m"/><feComposite in="SourceGraphic" in2="m" operator="in"/></filter>
+<symbol id="xlogo" viewBox="0 0 40 40"><path d="M6 6l13 14L6 34h6l10-10 10 10h4L24 20 36 6h-6L22 16 12 6z" fill="none" stroke="currentColor" stroke-width="2.6"/></symbol>
+<symbol id="globe" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="30" cy="30" r="26"/><ellipse cx="30" cy="30" rx="12" ry="26"/><ellipse cx="30" cy="30" rx="22" ry="26"/><path d="M4 30h52M8 18h44M8 42h44"/></g></symbol>
+</defs></svg>
+
+<!-- ===================== NEON FRONTIER ===================== -->
+<section class="scr" id="frontier">
+  <div class="nav"><div class="logo"><svg style="color:var(--t)"><use href="#xlogo"/></svg>NEON∕∕GRID <span style="color:var(--k)">✿</span></div>
+    <div class="tabs"><a class="on" href="#">Origin</a><a href="#">Protocols</a><a href="#">Arenas</a><a href="#">Identity</a><a href="#">Archive</a><a href="#">Access</a></div>
+    <span class="ico">⌕</span><span class="tag">System online</span><a class="cta" href="#metaverse">Enter grid →</a></div>
+  <div class="side"><span class="v mono">Follow the signal</span><i></i><i></i><i></i><i></i><div class="line"></div><span class="v mono">Scroll to enter</span><span class="mono" style="font-size:max(7px,.5cqw)">Node<br>/004</span></div>
+  <div class="hl"><div class="eyebrow">Enter the unstable dimension</div>
+    <h1 class="grunge glitch" data-t="NEON&#10;FRONTIER" style="margin-top:1.4cqw">Neon<br>Frontier</h1></div>
+  <img class="girl" id="g1" src="img/girl1.webp" alt="Cyber character with visor">
+  <aside class="card1"><div class="lab">// Dark feed</div><svg id="feed" viewBox="0 0 200 50" style="width:100%;height:4.4cqw;margin:.4cqw 0"></svg>
+    <h4>NEON∕∕GRID</h4><p>A digital domain beyond control. Explore unstable arenas, discover forbidden protocols, and shape your identity in a world built on code and consequence.</p>
+    <div class="idbtn"><span>⌬</span><span>Open identity<br><small style="opacity:.7">Clearance required</small></span><b>↗</b></div>
+    <div class="lab">// Network status</div>
+    <div class="net"><svg viewBox="0 0 120 60" style="width:55%"><g fill="none" stroke="var(--p)" stroke-width="1"><ellipse cx="60" cy="30" rx="50" ry="26"/><ellipse cx="60" cy="30" rx="22" ry="26"/><path d="M10 30h100M18 16h84M18 44h84"/></g><g fill="var(--k)"><circle cx="40" cy="22" r="2"/><circle cx="78" cy="36" r="2"/><circle cx="62" cy="18" r="2"/><circle cx="92" cy="24" r="2"/></g></svg><div style="text-align:right"><div class="pct" id="pct">97%</div><div class="lab">Stability</div></div></div></aside>
+  <div class="hud">
+    <div><div class="lab">// Grid activity</div><svg id="act" viewBox="0 0 200 40" style="width:100%;height:3.4cqw"></svg><div class="lab" style="display:flex;justify-content:space-between"><span>Active nodes</span><b id="nodes" style="color:#fff">24,881</b></div></div>
+    <div><div class="lab">// Protocols unlocked</div><div style="display:flex;align-items:center;gap:1cqw;margin-top:.5cqw"><svg viewBox="0 0 50 50" style="width:3.8cqw"><path d="M25 3l19 11v22L25 47 6 36V14z" fill="none" stroke="var(--k)" stroke-width="2"/><path d="M25 14l10 6v10l-10 6-10-6V20z" fill="none" stroke="var(--p)" stroke-width="2"/></svg><div><span class="big">07</span><span class="lab"> / 42</span></div></div><div class="lab" style="margin-top:.4cqw">Next clearance required</div></div>
+    <div><div class="lab">// Arena status</div><div style="display:flex;align-items:center;gap:1cqw;margin-top:.4cqw"><svg viewBox="0 0 50 50" style="width:3.8cqw"><circle cx="25" cy="25" r="20" fill="none" stroke="rgba(180,85,255,.3)" stroke-width="4"/><circle cx="25" cy="25" r="20" fill="none" stroke="var(--k)" stroke-width="4" stroke-dasharray="96 30" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="6s" repeatCount="indefinite"/></circle></svg><div><div class="lab">Alpha-7</div><div class="live">LIVE</div><div class="lab">Population <span id="pop" style="color:#fff">8,731</span></div></div></div></div>
+    <div><div class="lab">// User identity</div><div style="display:flex;align-items:center;gap:1cqw;margin-top:.3cqw"><svg viewBox="0 0 40 50" style="width:3.2cqw"><g fill="none" stroke="var(--p)" stroke-width="1.2"><path d="M20 3c-9 0-14 7-14 16 0 8 4 16 8 20v6h12v-6c4-4 8-12 8-20C34 10 29 3 20 3z"/><path d="M6 19h28M20 3v42M10 30h20M12 12h16"/></g></svg><div><div class="lab">Status <b style="color:#fff">Verified</b></div><div class="lab">Rank <b style="color:#fff">Initiate</b></div></div></div></div>
+    <div><div class="lab">// Grid time</div><div style="display:flex;align-items:center;justify-content:space-between"><div><div class="big" id="clock">23:47:12</div><div class="lab">Cycle <span id="cycle">8042.17</span></div></div><svg viewBox="0 0 50 50" style="width:3.6cqw"><circle cx="25" cy="25" r="22" fill="none" stroke="var(--ln)" stroke-width="2"/><line id="hh" x1="25" y1="25" x2="25" y2="14" stroke="var(--t)" stroke-width="2"/><line id="mh" x1="25" y1="25" x2="25" y2="8" stroke="var(--k)" stroke-width="1.5"/></svg></div></div>
+  </div>
+</section>
+
+<!-- ===================== METAVERSE ===================== -->
+<section class="scr" id="metaverse">
+  <div class="nav"><svg style="width:3cqw;height:3cqw;color:var(--k);filter:drop-shadow(0 0 .8cqw var(--k))"><use href="#xlogo"/></svg>
+    <div class="tabs" style="margin:0 auto 0 4cqw"><a class="on" href="#">Home</a><a href="#">Discover</a><a href="#">Experiences</a><a href="#">Marketplace</a><a href="#">Community</a><a href="#">Docs</a></div>
+    <span class="ico" style="border-color:var(--k)">⌕</span><a class="cta" href="#">Join us →</a></div>
+  <div class="side" style="top:10cqw"><span class="v mono">Follow us</span><i></i><i></i><i></i><i></i><div class="line"></div><span class="v mono">Scroll down</span></div>
+  <div class="eyebrow abs" style="z-index:9;left:5cqw;top:7cqw;color:#fff">Enter the next dimension<div style="width:14cqw;height:1px;background:var(--k);margin-top:.5cqw;box-shadow:0 0 .8cqw var(--k)"></div></div>
+  <div class="counter">01 <span>/ 05</span></div>
+  <div class="hl2"><h1 class="grunge glitch" data-t="METAVERSE">Metaverse</h1></div>
+  <img class="girl" id="g2" src="img/girl2.webp" alt="Cyber samurai character">
+  <div class="lft"><h3>Limitless worlds.<br>Endless <em>possibilities.</em></h3><p>Explore, create and own in a boundless digital universe. The future is not just virtual, it's yours to build.</p><a class="ghost" href="#">Explore now</a></div>
+  <div class="rgt"><h3>One universe.<br>Infinite experiences.<br><em>Are you ready?</em></h3><div class="trailer"><span>▶</span>WATCH TRAILER</div></div>
+  <div class="bar2">
+    <div><svg style="width:5.4cqw;height:5.4cqw;color:var(--p)"><use href="#globe"/></svg><div><span class="num" data-n="15" data-p="+" data-s=" MILLION">+15 MILLION</span><small>Active users<br><span style="opacity:.6">Across the metaverse</span></small></div></div>
+    <div><svg viewBox="0 0 60 40" style="width:5.4cqw;color:var(--p)"><path d="M12 14h36c6 0 10 10 10 18 0 3-3 4-5 2l-6-6H18l-6 6c-2 2-5 1-5-2 0-8 4-18 10-18z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M18 20v6M15 23h6M42 21h.1M46 25h.1" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><div><span class="num" data-n="25" data-p="+" data-s=" THOUSAND">+25 THOUSAND</span><small>Games online<br><span style="opacity:.6">Play, compete, conquer</span></small></div></div>
+    <div><div class="avs"><i></i><i></i><i></i><i></i></div><div><span class="num" style="font-size:1.1cqw;color:var(--k)">GLOBAL COMMUNITY</span><small>Connect. Collaborate. Create.</small></div></div>
+    <div><span class="go">→</span></div>
+  </div>
+</section>
+<p class="note">CONCEPT DESIGN · HUD LAYOUT CODED FROM A REFERENCE · CHARACTER ART IS A RECOLOURED REFERENCE PLACEHOLDER, SWAP IN YOUR OWN</p>
+
+<script>
+/* live clock + cycle */
+const pad=n=>String(n).padStart(2,'0');
+function tick(){const d=new Date();document.getElementById('clock').textContent=pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());
+ document.getElementById('hh').setAttribute('transform','rotate('+((d.getHours()%12)*30+d.getMinutes()/2)+' 25 25)');document.getElementById('mh').setAttribute('transform','rotate('+(d.getMinutes()*6+d.getSeconds()/10)+' 25 25)');
+ document.getElementById('cycle').textContent=(8042+d.getSeconds()/60+d.getMinutes()).toFixed(2)}
+tick();setInterval(tick,1000);
+/* animated area charts */
+function chart(id,w,h,pts,stroke){const el=document.getElementById(id);let data=Array.from({length:pts},(_,i)=>.5+.3*Math.sin(i/2.4)+Math.random()*.25);
+ function draw(){const st=w/(pts-1);let line=data.map((v,i)=>(i?'L':'M')+(i*st).toFixed(1)+' '+(h-v*h*.9).toFixed(1)).join(' ');
+  el.innerHTML=`<defs><linearGradient id="${id}g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${stroke}" stop-opacity=".5"/><stop offset="1" stop-color="${stroke}" stop-opacity="0"/></linearGradient></defs><path d="${line} L${w} ${h} L0 ${h}Z" fill="url(#${id}g)"/><path d="${line}" fill="none" stroke="${stroke}" stroke-width="1.4"/>`}
+ draw();setInterval(()=>{data.shift();data.push(Math.min(.95,Math.max(.12,data[data.length-1]+(Math.random()-.5)*.3)));draw()},900)}
+chart('feed',200,50,30,'#b455ff');chart('act',200,40,34,'#ff3fd0');
+setInterval(()=>{document.getElementById('nodes').textContent=(24881+Math.floor(Math.random()*90)).toLocaleString('en-US');document.getElementById('pop').textContent=(8731+Math.floor(Math.random()*40)).toLocaleString('en-US');document.getElementById('pct').textContent=(96+Math.floor(Math.random()*3))+'%'},1800);
+/* slide counter */
+let n=1;setInterval(()=>{n=n%5+1;document.querySelector('.counter').firstChild.textContent='0'+n+' '},3200);
+/* parallax on the characters */
+document.querySelectorAll('.scr').forEach(s=>s.addEventListener('pointermove',e=>{const r=s.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;const g=s.querySelector('.girl');g.style.setProperty('--tx',(x*-14).toFixed(1)+'px');g.style.setProperty('--ty',(y*-8).toFixed(1)+'px');g.style.translate=(x*-14)+'px '+(y*-8)+'px'}));
+/* count-up for the metaverse numbers */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);e.target.querySelectorAll('[data-n]').forEach(el=>{const to=+el.dataset.n,t0=performance.now();const f=t=>{const k=Math.min(1,(t-t0)/1600),v=Math.round(to*(1-Math.pow(1-k,3)));el.textContent=el.dataset.p+v+el.dataset.s;if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)})}),{threshold:.3});
+io.observe(document.getElementById('metaverse'));
+
+/* ===== GLITCH++ : jitter on most text + random letter scrambling + screen hits ===== */
+(function(){
+  const sel='.tabs a,.lab,.mono,.eyebrow,.cta,.tag,.ghost,.card1 h4,.card1 p,.idbtn,.lft h3,.lft p,.rgt h3,.trailer,.bar2 small,.bar2 .num,.hud .big,.hud .live,.logo,.counter,.pct,.note';
+  document.querySelectorAll(sel).forEach(el=>{el.classList.add('gl');el.style.setProperty('--gd',(2.4+Math.random()*3.6).toFixed(2)+'s');el.style.setProperty('--gdl',(-Math.random()*5).toFixed(2)+'s')});
+  const GL='▓▒░█#/\\<>01$%&*+=?';
+  const skip='[data-n],#clock,#nodes,#pop,#pct,#cycle,.counter,script,style';
+  const nodes=[];
+  const w=document.createTreeWalker(document.querySelector('.scr').parentNode,NodeFilter.SHOW_TEXT);
+  while(w.nextNode()){const n=w.currentNode;if(n.nodeValue.trim().length<3)continue;const pe=n.parentElement;if(!pe||pe.closest(skip)||!pe.closest('.scr,.note'))continue;nodes.push(n)}
+  function scramble(n){const o=n.nodeValue;let out='';for(const c of o)out+=(c===' '||c==='\n'||Math.random()>.32)?c:GL[Math.floor(Math.random()*GL.length)];n.nodeValue=out;setTimeout(()=>{n.nodeValue=o},90+Math.random()*160)}
+  setInterval(()=>{const k=1+Math.floor(Math.random()*3);for(let i=0;i<k;i++)scramble(nodes[Math.floor(Math.random()*nodes.length)])},260);
+  setInterval(()=>{const sc=document.querySelectorAll('.scr')[Math.floor(Math.random()*2)];sc.classList.add('hit');setTimeout(()=>sc.classList.remove('hit'),230)},2600);
+})();
+</script>
+</body>
+</html>
