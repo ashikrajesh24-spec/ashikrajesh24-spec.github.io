@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Client Artwork Portal · Ash</title>
+<meta name="description" content="Each client brand gets a private gallery of its approved artwork on the company website, protected by email one-time codes.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/site.css?v=6.7">
+<link rel="stylesheet" href="../css/app.css?v=6.7">
+</head>
+<body class="app-page loaded">
+<header class="top">
+  <a class="back" href="../index.html#apps">← All Odoo apps</a>
+  <span class="crumb">Ash · Odoo work</span>
+</header>
+
+<section class="app-hero">
+  <div class="app-hero-copy">
+    <p class="app-no">App 13 · Website &amp; security</p>
+    <h1>Client Artwork Portal</h1>
+    <p class="lead">Each client brand gets a private gallery of its approved artwork on the company website, protected by email one-time codes.</p>
+    <ul class="hl"><li>A gallery page for each brand at /artwork/&lt;brand&gt;</li><li>Codes sent only to the brand&#x27;s own email domains; that client sees only their brand</li><li>Revocable manager passkeys</li><li>10-minute codes, idle lock, per-email and per-IP rate limits</li><li>Every login and view logged</li></ul>
+    <a class="btn" href="#workflow">See the workflow · 3 steps</a>
+  </div>
+  <figure class="frame hero-frame" data-full="../assets/apps/artwork/1.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Client Artwork Portal</span></div><img src="../assets/apps/artwork/1.webp" alt="Client Artwork Portal main screen"></figure>
+</section>
+
+<section id="workflow" class="block">
+  <h2 class="mega md in"><span class="ln"><span>The workflow</span></span></h2>
+  <p class="lead">Captured from the real module on an anonymised copy of the database. Names are fictional, and confidential figures are blurred. Click any screen to enlarge it.</p>
+  <ol class="steps">
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">01</span><p>Brands with their gallery URL and artwork count.</p></div>
+        <figure class="frame" data-full="../assets/apps/artwork/1.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Client Artwork Portal</span></div>
+          <img src="../assets/apps/artwork/1.webp" alt="Client Artwork Portal: Brands with their gallery URL and artwork count." loading="eager"></figure>
+      </li>
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">02</span><p>The client-facing page is private: clients sign in with a one-time code sent to their company email (or a manager-issued passkey).</p></div>
+        <figure class="frame" data-full="../assets/apps/artwork/login.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Client Artwork Portal</span></div>
+          <img src="../assets/apps/artwork/login.webp" alt="Client Artwork Portal: The client-facing page is private: clients sign in with a one-time code sent to their company email (or a manager-issued passkey)." loading="lazy"></figure>
+      </li>
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">03</span><p>Signed in, the client sees only their own brand&#x27;s approved artwork, headed by its logo.</p></div>
+        <figure class="frame" data-full="../assets/apps/artwork/2.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Client Artwork Portal</span></div>
+          <img src="../assets/apps/artwork/2.webp" alt="Client Artwork Portal: Signed in, the client sees only their own brand&#x27;s approved artwork, headed by its logo." loading="lazy"></figure>
+      </li>
+  </ol>
+</section>
+
+<nav class="app-nav block">
+  <a href="retention.html"><small>← Previous</small>Client Retention</a>
+  <a href="../index.html#apps" class="mid">All apps</a>
+  <a href="dev.html"><small>Next →</small>Developer Dashboard</a>
+</nav>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" hidden><button class="lb-close" aria-label="Close">×</button><img alt=""></div>
+<script>
+const lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
+document.querySelectorAll('.frame').forEach(f => f.addEventListener('click', () => { lbImg.src = f.dataset.full; lb.hidden = false; requestAnimationFrame(() => lb.classList.add('open')); }));
+const close = () => { lb.classList.remove('open'); setTimeout(() => lb.hidden = true, 300); };
+lb.addEventListener('click', e => e.target !== lbImg && close());
+addEventListener('keydown', e => e.key === 'Escape' && !lb.hidden && close());
+const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))), { threshold: .15 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Client Retention · Ash</title>
+<meta name="description" content="A call-back app for previous clients, with managers monitoring the calls.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/site.css?v=6.7">
+<link rel="stylesheet" href="../css/app.css?v=6.7">
+</head>
+<body class="app-page loaded">
+<header class="top">
+  <a class="back" href="../index.html#apps">← All Odoo apps</a>
+  <span class="crumb">Ash · Odoo work</span>
+</header>
+
+<section class="app-hero">
+  <div class="app-hero-copy">
+    <p class="app-no">App 12 · CRM</p>
+    <h1>Client Retention</h1>
+    <p class="lead">A call-back app for previous clients, with managers monitoring the calls.</p>
+    <ul class="hl"><li>Call status, client response and next follow-up</li><li>Automatic call history, one line per person per day</li><li>One-click &quot;Create Enquiry&quot; into the Enquiries pipeline</li><li>Users see their own clients; managers see everything</li></ul>
+    <a class="btn" href="#workflow">See the workflow · 3 steps</a>
+  </div>
+  <figure class="frame hero-frame" data-full="../assets/apps/retention/1.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Client Retention</span></div><img src="../assets/apps/retention/1.webp" alt="Client Retention main screen"></figure>
+</section>
+
+<section id="workflow" class="block">
+  <h2 class="mega md in"><span class="ln"><span>The workflow</span></span></h2>
+  <p class="lead">Captured from the real module on an anonymised copy of the database. Names are fictional, and confidential figures are blurred. Click any screen to enlarge it.</p>
+  <ol class="steps">
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">01</span><p>Call-back dashboard: who has been called, responses and follow-ups due.</p></div>
+        <figure class="frame" data-full="../assets/apps/retention/1.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Client Retention</span></div>
+          <img src="../assets/apps/retention/1.webp" alt="Client Retention: Call-back dashboard: who has been called, responses and follow-ups due." loading="eager"></figure>
+      </li>
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">02</span><p>Client contact list with call status, response and next follow-up.</p></div>
+        <figure class="frame" data-full="../assets/apps/retention/2.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Client Retention</span></div>
+          <img src="../assets/apps/retention/2.webp" alt="Client Retention: Client contact list with call status, response and next follow-up." loading="lazy"></figure>
+      </li>
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">03</span><p>Call history: every status, response or comment change is logged automatically.</p></div>
+        <figure class="frame" data-full="../assets/apps/retention/3.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Client Retention</span></div>
+          <img src="../assets/apps/retention/3.webp" alt="Client Retention: Call history: every status, response or comment change is logged automatically." loading="lazy"></figure>
+      </li>
+  </ol>
+</section>
+
+<nav class="app-nav block">
+  <a href="sheet.html"><small>← Previous</small>Marketing Sheet</a>
+  <a href="../index.html#apps" class="mid">All apps</a>
+  <a href="artwork.html"><small>Next →</small>Client Artwork Portal</a>
+</nav>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" hidden><button class="lb-close" aria-label="Close">×</button><img alt=""></div>
+<script>
+const lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
+document.querySelectorAll('.frame').forEach(f => f.addEventListener('click', () => { lbImg.src = f.dataset.full; lb.hidden = false; requestAnimationFrame(() => lb.classList.add('open')); }));
+const close = () => { lb.classList.remove('open'); setTimeout(() => lb.hidden = true, 300); };
+lb.addEventListener('click', e => e.target !== lbImg && close());
+addEventListener('keydown', e => e.key === 'Escape' && !lb.hidden && close());
+const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))), { threshold: .15 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

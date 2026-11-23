@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sales Dashboard &amp; Incentives · Ash</title>
+<meta name="description" content="One live view of company sales, team targets and each salesperson&#x27;s incentive, replacing the monthly spreadsheets. Access is by role, from the director down to each executive.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/site.css?v=6.7">
+<link rel="stylesheet" href="../css/app.css?v=6.7">
+</head>
+<body class="app-page loaded">
+<header class="top">
+  <a class="back" href="../index.html#apps">← All Odoo apps</a>
+  <span class="crumb">Ash · Odoo work</span>
+</header>
+
+<section class="app-hero">
+  <div class="app-hero-copy">
+    <p class="app-no">App 02 · Sales</p>
+    <h1>Sales Dashboard &amp; Incentives</h1>
+    <p class="lead">One live view of company sales, team targets and each salesperson&#x27;s incentive, replacing the monthly spreadsheets. Access is by role, from the director down to each executive.</p>
+    <ul class="hl"><li>Weekly, monthly, yearly or custom periods with PDF, Excel and CSV export</li><li>Teams with divisions and leaders, a leaderboard, and a drill-down for each person</li><li>One order can be split between salespeople by percentage</li><li>Tiered 2% / 2.5% / 3% incentive on margin-based eligible sales, with per-order overrides</li><li>Targets scaled to week, quarter, year and till-date</li><li>Daily activity tracking: calls, emails, meetings, WhatsApp, LinkedIn</li></ul>
+    <a class="btn" href="#workflow">See the workflow · 4 steps</a>
+  </div>
+  <figure class="frame hero-frame" data-full="../assets/apps/sales/1.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Sales Dashboard &amp; Incentives</span></div><img src="../assets/apps/sales/1.webp" alt="Sales Dashboard &amp; Incentives main screen"></figure>
+</section>
+
+<section id="workflow" class="block">
+  <h2 class="mega md in"><span class="ln"><span>The workflow</span></span></h2>
+  <p class="lead">Captured from the real module on an anonymised copy of the database. Names are fictional, and confidential figures are blurred. Click any screen to enlarge it.</p>
+  <ol class="steps">
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">01</span><p>Company KPIs for the month (total and eligible sales, deals, target vs achievement, pipeline) and ranked sales teams.</p></div>
+        <figure class="frame" data-full="../assets/apps/sales/1.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Sales Dashboard &amp; Incentives</span></div>
+          <img src="../assets/apps/sales/1.webp" alt="Sales Dashboard &amp; Incentives: Company KPIs for the month (total and eligible sales, deals, target vs achievement, pipeline) and ranked sales teams." loading="eager"></figure>
+      </li>
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">02</span><p>Top salespeople leaderboard; every card opens that person&#x27;s drill-down.</p></div>
+        <figure class="frame" data-full="../assets/apps/sales/2.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Sales Dashboard &amp; Incentives</span></div>
+          <img src="../assets/apps/sales/2.webp" alt="Sales Dashboard &amp; Incentives: Top salespeople leaderboard; every card opens that person&#x27;s drill-down." loading="lazy"></figure>
+      </li>
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">03</span><p>CRM pipeline split by opportunity type and by lead stage.</p></div>
+        <figure class="frame" data-full="../assets/apps/sales/3.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Sales Dashboard &amp; Incentives</span></div>
+          <img src="../assets/apps/sales/3.webp" alt="Sales Dashboard &amp; Incentives: CRM pipeline split by opportunity type and by lead stage." loading="lazy"></figure>
+      </li>
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">04</span><p>Team performance: weekly, quarterly, yearly and till-date targets against achievement.</p></div>
+        <figure class="frame" data-full="../assets/apps/sales/4.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Sales Dashboard &amp; Incentives</span></div>
+          <img src="../assets/apps/sales/4.webp" alt="Sales Dashboard &amp; Incentives: Team performance: weekly, quarterly, yearly and till-date targets against achievement." loading="lazy"></figure>
+      </li>
+  </ol>
+</section>
+
+<nav class="app-nav block">
+  <a href="dev.html"><small>← Previous</small>Developer Dashboard</a>
+  <a href="../index.html#apps" class="mid">All apps</a>
+  <a href="garage.html"><small>Next →</small>Automobile Garage ERP</a>
+</nav>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" hidden><button class="lb-close" aria-label="Close">×</button><img alt=""></div>
+<script>
+const lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
+document.querySelectorAll('.frame').forEach(f => f.addEventListener('click', () => { lbImg.src = f.dataset.full; lb.hidden = false; requestAnimationFrame(() => lb.classList.add('open')); }));
+const close = () => { lb.classList.remove('open'); setTimeout(() => lb.hidden = true, 300); };
+lb.addEventListener('click', e => e.target !== lbImg && close());
+addEventListener('keydown', e => e.key === 'Escape' && !lb.hidden && close());
+const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))), { threshold: .15 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

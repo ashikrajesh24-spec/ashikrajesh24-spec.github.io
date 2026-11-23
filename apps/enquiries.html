@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enquiries Dashboard · Ash</title>
+<meta name="description" content="Replaced the enquiry spreadsheet with a register and a monthly dashboard.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/site.css?v=6.7">
+<link rel="stylesheet" href="../css/app.css?v=6.7">
+</head>
+<body class="app-page loaded">
+<header class="top">
+  <a class="back" href="../index.html#apps">← All Odoo apps</a>
+  <span class="crumb">Ash · Odoo work</span>
+</header>
+
+<section class="app-hero">
+  <div class="app-hero-copy">
+    <p class="app-no">App 07 · Sales pipeline</p>
+    <h1>Enquiries Dashboard</h1>
+    <p class="lead">Replaced the enquiry spreadsheet with a register and a monthly dashboard.</p>
+    <ul class="hl"><li>Enquiries, value, open, won, win rate, average deal and junk vs last month</li><li>Junk kept out of the win rate</li><li>Live pipeline by stage</li><li>12-month trends and a 3-month forecast</li></ul>
+    <a class="btn" href="#workflow">See the workflow · 3 steps</a>
+  </div>
+  <figure class="frame hero-frame" data-full="../assets/apps/enquiries/1.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Enquiries Dashboard</span></div><img src="../assets/apps/enquiries/1.webp" alt="Enquiries Dashboard main screen"></figure>
+</section>
+
+<section id="workflow" class="block">
+  <h2 class="mega md in"><span class="ln"><span>The workflow</span></span></h2>
+  <p class="lead">Captured from the real module on an anonymised copy of the database. Names are fictional, and confidential figures are blurred. Click any screen to enlarge it.</p>
+  <ol class="steps">
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">01</span><p>Monthly enquiry KPIs vs last month, on-pace projection and the live open pipeline by stage.</p></div>
+        <figure class="frame" data-full="../assets/apps/enquiries/1.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Enquiries Dashboard</span></div>
+          <img src="../assets/apps/enquiries/1.webp" alt="Enquiries Dashboard: Monthly enquiry KPIs vs last month, on-pace projection and the live open pipeline by stage." loading="eager"></figure>
+      </li>
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">02</span><p>12-month trends with a forecast for the coming months.</p></div>
+        <figure class="frame" data-full="../assets/apps/enquiries/2.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Enquiries Dashboard</span></div>
+          <img src="../assets/apps/enquiries/2.webp" alt="Enquiries Dashboard: 12-month trends with a forecast for the coming months." loading="lazy"></figure>
+      </li>
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">03</span><p>The enquiry register that replaced the Excel sheet.</p></div>
+        <figure class="frame" data-full="../assets/apps/enquiries/3.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Enquiries Dashboard</span></div>
+          <img src="../assets/apps/enquiries/3.webp" alt="Enquiries Dashboard: The enquiry register that replaced the Excel sheet." loading="lazy"></figure>
+      </li>
+  </ol>
+</section>
+
+<nav class="app-nav block">
+  <a href="designer.html"><small>← Previous</small>Designer Tracking</a>
+  <a href="../index.html#apps" class="mid">All apps</a>
+  <a href="seo.html"><small>Next →</small>SEO Tracker</a>
+</nav>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" hidden><button class="lb-close" aria-label="Close">×</button><img alt=""></div>
+<script>
+const lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
+document.querySelectorAll('.frame').forEach(f => f.addEventListener('click', () => { lbImg.src = f.dataset.full; lb.hidden = false; requestAnimationFrame(() => lb.classList.add('open')); }));
+const close = () => { lb.classList.remove('open'); setTimeout(() => lb.hidden = true, 300); };
+lb.addEventListener('click', e => e.target !== lbImg && close());
+addEventListener('keydown', e => e.key === 'Escape' && !lb.hidden && close());
+const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))), { threshold: .15 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

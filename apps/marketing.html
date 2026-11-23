@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marketing Dashboard · Ash</title>
+<meta name="description" content="A weekly digital marketing and business performance report for management, with 14 sections and an overall health score.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/site.css?v=6.7">
+<link rel="stylesheet" href="../css/app.css?v=6.7">
+</head>
+<body class="app-page loaded">
+<header class="top">
+  <a class="back" href="../index.html#apps">← All Odoo apps</a>
+  <span class="crumb">Ash · Odoo work</span>
+</header>
+
+<section class="app-hero">
+  <div class="app-hero-copy">
+    <p class="app-no">App 04 · Marketing</p>
+    <h1>Marketing Dashboard</h1>
+    <p class="lead">A weekly digital marketing and business performance report for management, with 14 sections and an overall health score.</p>
+    <ul class="hl"><li>KPIs with current, last-week and target values plus a status</li><li>Health score out of 100 built from ten category scores</li><li>Division performance and keyword movements</li><li>Budget, competitors, risks and the actions management needs to take</li></ul>
+    <a class="btn" href="#workflow">See the workflow · 4 steps</a>
+  </div>
+  <figure class="frame hero-frame" data-full="../assets/apps/marketing/1.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Marketing Dashboard</span></div><img src="../assets/apps/marketing/1.webp" alt="Marketing Dashboard main screen"></figure>
+</section>
+
+<section id="workflow" class="block">
+  <h2 class="mega md in"><span class="ln"><span>The workflow</span></span></h2>
+  <p class="lead">Captured from the real module on an anonymised copy of the database. Names are fictional, and confidential figures are blurred. Click any screen to enlarge it.</p>
+  <ol class="steps">
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">01</span><p>Weekly management report: headline KPIs, status-rated management summary and the overall health score.</p></div>
+        <figure class="frame" data-full="../assets/apps/marketing/1.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Marketing Dashboard</span></div>
+          <img src="../assets/apps/marketing/1.webp" alt="Marketing Dashboard: Weekly management report: headline KPIs, status-rated management summary and the overall health score." loading="eager"></figure>
+      </li>
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">02</span><p>Division performance: traffic, enquiries, qualified leads, sales and target achievement.</p></div>
+        <figure class="frame" data-full="../assets/apps/marketing/2.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Marketing Dashboard</span></div>
+          <img src="../assets/apps/marketing/2.webp" alt="Marketing Dashboard: Division performance: traffic, enquiries, qualified leads, sales and target achievement." loading="lazy"></figure>
+      </li>
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">03</span><p>SEO targets vs actuals and top keyword movements with trend arrows.</p></div>
+        <figure class="frame" data-full="../assets/apps/marketing/3.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Marketing Dashboard</span></div>
+          <img src="../assets/apps/marketing/3.webp" alt="Marketing Dashboard: SEO targets vs actuals and top keyword movements with trend arrows." loading="lazy"></figure>
+      </li>
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">04</span><p>Each week is a record the marketing team fills in and management approves.</p></div>
+        <figure class="frame" data-full="../assets/apps/marketing/4.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Marketing Dashboard</span></div>
+          <img src="../assets/apps/marketing/4.webp" alt="Marketing Dashboard: Each week is a record the marketing team fills in and management approves." loading="lazy"></figure>
+      </li>
+  </ol>
+</section>
+
+<nav class="app-nav block">
+  <a href="garage.html"><small>← Previous</small>Automobile Garage ERP</a>
+  <a href="../index.html#apps" class="mid">All apps</a>
+  <a href="reseller.html"><small>Next →</small>Reseller API</a>
+</nav>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" hidden><button class="lb-close" aria-label="Close">×</button><img alt=""></div>
+<script>
+const lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
+document.querySelectorAll('.frame').forEach(f => f.addEventListener('click', () => { lbImg.src = f.dataset.full; lb.hidden = false; requestAnimationFrame(() => lb.classList.add('open')); }));
+const close = () => { lb.classList.remove('open'); setTimeout(() => lb.hidden = true, 300); };
+lb.addEventListener('click', e => e.target !== lbImg && close());
+addEventListener('keydown', e => e.key === 'Escape' && !lb.hidden && close());
+const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))), { threshold: .15 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

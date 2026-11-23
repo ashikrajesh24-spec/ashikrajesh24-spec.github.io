@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stock &amp; Profit Reports · Ash</title>
+<meta name="description" content="Over-stocked and non-moving stock, best-moving products and best-profit products, with numbers that tie out to the accounts.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/site.css?v=6.7">
+<link rel="stylesheet" href="../css/app.css?v=6.7">
+</head>
+<body class="app-page loaded">
+<header class="top">
+  <a class="back" href="../index.html#apps">← All Odoo apps</a>
+  <span class="crumb">Ash · Odoo work</span>
+</header>
+
+<section class="app-hero">
+  <div class="app-hero-copy">
+    <p class="app-no">App 10 · Management reporting</p>
+    <h1>Stock &amp; Profit Reports</h1>
+    <p class="lead">Over-stocked and non-moving stock, best-moving products and best-profit products, with numbers that tie out to the accounts.</p>
+    <ul class="hl"><li>Weekly, monthly, yearly or date-range periods</li><li>Months of stock from the last 365 days of sales</li><li>Profit = invoiced sales − pieces × average purchase price</li><li>Brand filter, search, sorting and Excel export</li></ul>
+    <a class="btn" href="#workflow">See the workflow · 3 steps</a>
+  </div>
+  <figure class="frame hero-frame" data-full="../assets/apps/reports/1.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Stock &amp; Profit Reports</span></div><img src="../assets/apps/reports/1.webp" alt="Stock &amp; Profit Reports main screen"></figure>
+</section>
+
+<section id="workflow" class="block">
+  <h2 class="mega md in"><span class="ln"><span>The workflow</span></span></h2>
+  <p class="lead">Captured from the real module on an anonymised copy of the database. Names are fictional, and confidential figures are blurred. Click any screen to enlarge it.</p>
+  <ol class="steps">
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">01</span><p>Over-stocked &amp; non-moving: pieces on hand, stock value, sales in period and months of stock, by brand.</p></div>
+        <figure class="frame" data-full="../assets/apps/reports/1.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Stock &amp; Profit Reports</span></div>
+          <img src="../assets/apps/reports/1.webp" alt="Stock &amp; Profit Reports: Over-stocked &amp; non-moving: pieces on hand, stock value, sales in period and months of stock, by brand." loading="eager"></figure>
+      </li>
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">02</span><p>Best moving products for the period, with stock on hand and months of cover.</p></div>
+        <figure class="frame" data-full="../assets/apps/reports/2.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Stock &amp; Profit Reports</span></div>
+          <img src="../assets/apps/reports/2.webp" alt="Stock &amp; Profit Reports: Best moving products for the period, with stock on hand and months of cover." loading="lazy"></figure>
+      </li>
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">03</span><p>Best profit products: invoiced sales minus average purchase cost.</p></div>
+        <figure class="frame" data-full="../assets/apps/reports/3.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Stock &amp; Profit Reports</span></div>
+          <img src="../assets/apps/reports/3.webp" alt="Stock &amp; Profit Reports: Best profit products: invoiced sales minus average purchase cost." loading="lazy"></figure>
+      </li>
+  </ol>
+</section>
+
+<nav class="app-nav block">
+  <a href="tasks.html"><small>← Previous</small>Company Task Board</a>
+  <a href="../index.html#apps" class="mid">All apps</a>
+  <a href="sheet.html"><small>Next →</small>Marketing Sheet</a>
+</nav>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" hidden><button class="lb-close" aria-label="Close">×</button><img alt=""></div>
+<script>
+const lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
+document.querySelectorAll('.frame').forEach(f => f.addEventListener('click', () => { lbImg.src = f.dataset.full; lb.hidden = false; requestAnimationFrame(() => lb.classList.add('open')); }));
+const close = () => { lb.classList.remove('open'); setTimeout(() => lb.hidden = true, 300); };
+lb.addEventListener('click', e => e.target !== lbImg && close());
+addEventListener('keydown', e => e.key === 'Escape' && !lb.hidden && close());
+const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))), { threshold: .15 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

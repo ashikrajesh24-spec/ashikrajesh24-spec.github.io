@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reseller API · Ash</title>
+<meta name="description" content="A REST API that lets resellers pull the product catalogue into their own systems, with pricing and access controlled per key.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/site.css?v=6.7">
+<link rel="stylesheet" href="../css/app.css?v=6.7">
+</head>
+<body class="app-page loaded">
+<header class="top">
+  <a class="back" href="../index.html#apps">← All Odoo apps</a>
+  <span class="crumb">Ash · Odoo work</span>
+</header>
+
+<section class="app-hero">
+  <div class="app-hero-copy">
+    <p class="app-no">App 05 · Integrations</p>
+    <h1>Reseller API</h1>
+    <p class="lead">A REST API that lets resellers pull the product catalogue into their own systems, with pricing and access controlled per key.</p>
+    <ul class="hl"><li>Products, categories and brands endpoints with pagination and CORS</li><li>Reseller pricelist plus a global or per-category margin</li><li>Allowed categories, hide prices, extra fields</li><li>Every call logged with response time</li><li>Portal page with keys and a downloadable manual</li></ul>
+    <a class="btn" href="#workflow">See the workflow · 2 steps</a>
+  </div>
+  <figure class="frame hero-frame" data-full="../assets/apps/reseller/1.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Reseller API</span></div><img src="../assets/apps/reseller/1.webp" alt="Reseller API main screen"></figure>
+</section>
+
+<section id="workflow" class="block">
+  <h2 class="mega md in"><span class="ln"><span>The workflow</span></span></h2>
+  <p class="lead">Captured from the real module on an anonymised copy of the database. Names are fictional, and confidential figures are blurred. Click any screen to enlarge it.</p>
+  <ol class="steps">
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">01</span><p>API keys per reseller with margin and last sync time. Keys are generated server-side.</p></div>
+        <figure class="frame" data-full="../assets/apps/reseller/1.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Reseller API</span></div>
+          <img src="../assets/apps/reseller/1.webp" alt="Reseller API: API keys per reseller with margin and last sync time. Keys are generated server-side." loading="eager"></figure>
+      </li>
+      <li class="step rv">
+        <div class="step-copy"><span class="step-n">02</span><p>A key: allowed categories, hide-prices switch, global or per-category profit margin, extra fields to expose.</p></div>
+        <figure class="frame" data-full="../assets/apps/reseller/2.webp"><div class="frame-bar"><i></i><i></i><i></i><span>Reseller API</span></div>
+          <img src="../assets/apps/reseller/2.webp" alt="Reseller API: A key: allowed categories, hide-prices switch, global or per-category profit margin, extra fields to expose." loading="lazy"></figure>
+      </li>
+  </ol>
+</section>
+
+<nav class="app-nav block">
+  <a href="marketing.html"><small>← Previous</small>Marketing Dashboard</a>
+  <a href="../index.html#apps" class="mid">All apps</a>
+  <a href="designer.html"><small>Next →</small>Designer Tracking</a>
+</nav>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" hidden><button class="lb-close" aria-label="Close">×</button><img alt=""></div>
+<script>
+const lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
+document.querySelectorAll('.frame').forEach(f => f.addEventListener('click', () => { lbImg.src = f.dataset.full; lb.hidden = false; requestAnimationFrame(() => lb.classList.add('open')); }));
+const close = () => { lb.classList.remove('open'); setTimeout(() => lb.hidden = true, 300); };
+lb.addEventListener('click', e => e.target !== lbImg && close());
+addEventListener('keydown', e => e.key === 'Escape' && !lb.hidden && close());
+const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))), { threshold: .15 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
