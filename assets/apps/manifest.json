@@ -1,0 +1,184 @@
+{
+ "dev": [
+  {
+   "src": "assets/apps/dev/1.webp",
+   "caption": "The board: profile with level, rank and XP bar on the left, the prioritised task pipeline on the right."
+  },
+  {
+   "src": "assets/apps/dev/2.webp",
+   "caption": "Queue: new requests wait here, ordered by urgency (drag to reorder). A developer accepts one to lock it in."
+  },
+  {
+   "src": "assets/apps/dev/3.webp",
+   "caption": "Completed work waits for the manager's approval. Approved tasks pay out XP by difficulty."
+  },
+  {
+   "src": "assets/apps/dev/4.webp",
+   "caption": "Creating a task: difficulty sets the XP, with voice-note instructions and file or video attachments."
+  },
+  {
+   "src": "assets/apps/dev/5.webp",
+   "caption": "All tasks with status, difficulty, assignee and the dates each stage was reached."
+  }
+ ],
+ "sales": [
+  {
+   "src": "assets/apps/sales/1.webp",
+   "caption": "Company KPIs for the month (total and eligible sales, deals, target vs achievement, pipeline) and ranked sales teams."
+  },
+  {
+   "src": "assets/apps/sales/2.webp",
+   "caption": "Top salespeople leaderboard; every card opens that person's drill-down."
+  },
+  {
+   "src": "assets/apps/sales/3.webp",
+   "caption": "CRM pipeline split by opportunity type and by lead stage."
+  },
+  {
+   "src": "assets/apps/sales/4.webp",
+   "caption": "Team performance: weekly, quarterly, yearly and till-date targets against achievement."
+  }
+ ],
+ "marketing": [
+  {
+   "src": "assets/apps/marketing/1.webp",
+   "caption": "Weekly management report: headline KPIs, status-rated management summary and the overall health score."
+  },
+  {
+   "src": "assets/apps/marketing/2.webp",
+   "caption": "Division performance: traffic, enquiries, qualified leads, sales and target achievement."
+  },
+  {
+   "src": "assets/apps/marketing/3.webp",
+   "caption": "SEO targets vs actuals and top keyword movements with trend arrows."
+  },
+  {
+   "src": "assets/apps/marketing/4.webp",
+   "caption": "Each week is a record the marketing team fills in and management approves."
+  }
+ ],
+ "reseller": [
+  {
+   "src": "assets/apps/reseller/1.webp",
+   "caption": "API keys per reseller with margin and last sync time. Keys are generated server-side."
+  },
+  {
+   "src": "assets/apps/reseller/2.webp",
+   "caption": "A key: allowed categories, hide-prices switch, global or per-category profit margin, extra fields to expose."
+  }
+ ],
+ "designer": [
+  {
+   "src": "assets/apps/designer/1.webp",
+   "caption": "Designers board: live availability, active jobs, revisions and done count, with one-click Assign."
+  },
+  {
+   "src": "assets/apps/designer/2.webp",
+   "caption": "Performance: monthly work units done vs requested, revisions, on-pace projection, per-designer right-first-time."
+  },
+  {
+   "src": "assets/apps/designer/3.webp",
+   "caption": "Requests from sales: type, complexity, work units, assigned designer and status."
+  }
+ ],
+ "enquiries": [
+  {
+   "src": "assets/apps/enquiries/1.webp",
+   "caption": "Monthly enquiry KPIs vs last month, on-pace projection and the live open pipeline by stage."
+  },
+  {
+   "src": "assets/apps/enquiries/2.webp",
+   "caption": "12-month trends with a forecast for the coming months."
+  },
+  {
+   "src": "assets/apps/enquiries/3.webp",
+   "caption": "The enquiry register that replaced the Excel sheet."
+  }
+ ],
+ "seo": [
+  {
+   "src": "assets/apps/seo/1.webp",
+   "caption": "Daily SEO log: who did what, for which brand, with links, attachments and time spent."
+  }
+ ],
+ "tasks": [
+  {
+   "src": "assets/apps/tasks/1.webp",
+   "caption": "Task board: Kanban by status with department, priority, deadline and overdue flags."
+  },
+  {
+   "src": "assets/apps/tasks/3.webp",
+   "caption": "Performance report by department and assignee."
+  }
+ ],
+ "reports": [
+  {
+   "src": "assets/apps/reports/1.webp",
+   "caption": "Over-stocked & non-moving: pieces on hand, stock value, sales in period and months of stock, by brand."
+  },
+  {
+   "src": "assets/apps/reports/2.webp",
+   "caption": "Best moving products for the period, with stock on hand and months of cover."
+  },
+  {
+   "src": "assets/apps/reports/3.webp",
+   "caption": "Best profit products: invoiced sales minus average purchase cost."
+  }
+ ],
+ "sheet": [
+  {
+   "src": "assets/apps/sheet/1.webp",
+   "caption": "The marketing plan as a live spreadsheet inside Odoo: frozen columns, cell colours, formula bar, and row and column tools, with .xlsx import and export."
+  }
+ ],
+ "retention": [
+  {
+   "src": "assets/apps/retention/1.webp",
+   "caption": "Call-back dashboard: who has been called, responses and follow-ups due."
+  },
+  {
+   "src": "assets/apps/retention/2.webp",
+   "caption": "Client contact list with call status, response and next follow-up."
+  },
+  {
+   "src": "assets/apps/retention/3.webp",
+   "caption": "Call history: every status, response or comment change is logged automatically."
+  }
+ ],
+ "artwork": [
+  {
+   "src": "assets/apps/artwork/1.webp",
+   "caption": "Brands with their gallery URL and artwork count."
+  },
+  {
+   "src": "assets/apps/artwork/login.webp",
+   "caption": "The client-facing page is private: clients sign in with a one-time code sent to their company email (or a manager-issued passkey)."
+  },
+  {
+   "src": "assets/apps/artwork/2.webp",
+   "caption": "Signed in, the client sees only their own brand's approved artwork, headed by its logo."
+  }
+ ],
+ "garage": [
+  {
+   "src": "assets/apps/garage/1.webp",
+   "caption": "Control centre: every area of the ERP from one home screen."
+  },
+  {
+   "src": "assets/apps/garage/2.webp",
+   "caption": "Job cards across the 12-stage workflow, from intake to handover."
+  },
+  {
+   "src": "assets/apps/garage/3.webp",
+   "caption": "A job card in repair WIP: the stage bar runs from intake to handover, with tabs for inspection, the estimate, parts allocation and workshop execution."
+  },
+  {
+   "src": "assets/apps/garage/4.webp",
+   "caption": "Executive BI: sales, purchases, VAT payable, profit, forecasts and the workshop pipeline."
+  },
+  {
+   "src": "assets/apps/garage/5.webp",
+   "caption": "Vehicle master with VIN, plate, owner and mileage."
+  }
+ ]
+}
